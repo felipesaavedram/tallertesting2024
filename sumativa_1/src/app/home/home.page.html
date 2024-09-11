@@ -1,0 +1,102 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ficha Médica
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingrese sus datos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-searchbar style="margin-bottom: 20px;" placeholder="Buscar por apellido"></ion-searchbar>
+     
+      <!--1) RUT -->
+      <ion-input type="text" id="rut" required="true"  minlength="8"  maxlength="12" 
+      pattern="^(\d{1,3}(?:\.\d{1,3}){2}-[\dkK])$" fill="solid" label="RUT" 
+      labelPlacement="floating" helperText="Ej: 12.345.678-9" errorText="Rut Inválido" 
+      [(ngModel)]="formData.rut"></ion-input>
+
+      <!--2) NOMBRES-->
+      <ion-input type="text" id="nombres" required minlength="8" maxlength="50" fill="solid" 
+      label="Nombres" labelPlacement="floating" helperText="Ej: Pedro Pablo" 
+      errorText="Nombre Inválido" [(ngModel)]="formData.nombres"></ion-input>
+
+      <!-- 3) APELLIDOS -->
+      <ion-input type="text" id="apellidos" required minlength="8" maxlength="50" fill="solid" 
+      label="Apellidos" labelPlacement="floating" helperText="Ej: Pérez Pereira" 
+      errorText="Apellido Inválido" [(ngModel)]="formData.apellidos"></ion-input>
+
+      <!-- 4) DIRECCIÓN -->
+      <ion-input type="text" id="direccion" required  minlength="10" maxlength="70" fill="solid" 
+      label="Dirección" labelPlacement="floating" helperText="Ingresa una dirección válida" 
+      errorText="Dirección Inválida" [(ngModel)]="formData.direccion"></ion-input>
+
+      <!-- 5) CIUDAD -->
+      <ion-input type="text" id="ciudad" required  minlength="3" maxlength="25" fill="solid" 
+      label="Ciudad" labelPlacement="floating" helperText="Ingresa una ciudad válida" 
+      errorText="Ciudad Inválida" [(ngModel)]="formData.ciudad"></ion-input>
+      
+      <!-- 6) TELEFONO -->
+      <ion-input type="tel" id="telefono" required  minlength="8" maxlength="9" fill="solid" 
+      label="Teléfono" labelPlacement="floating" helperText="Ej: 9 1234 5678" 
+      errorText="Teléfono Inválido" [(ngModel)]="formData.telefono"></ion-input>
+
+      <!-- 7) EMAIL -->
+      <ion-input type="email" id="correo" required  minlength="4" 
+      pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" fill="solid" 
+      label="Correo Electrónico" labelPlacement="floating" helperText="Ej: correo@electronico.cl" 
+      errorText="Correo Electrónico Inválido"  required="true"[(ngModel)]="formData.correo"></ion-input>
+
+      <!-- 8) FECHA DE NACIMIENTO -->
+      <ion-input type="date" id="fechaNacimiento" required  fill="solid" label="Fecha de Nacimiento" 
+      labelPlacement="floating" errorText="Fecha de Nacimiento Inválida" [(ngModel)]="formData.fechaNacimiento"></ion-input>
+
+      <!-- 9) ESTADO CIVIL -->
+     
+      <ion-select style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px" required label="Estado Civil" 
+      label-placement="floating" [(ngModel)]="formData.estadoCivil">
+        <ion-select-option value="Soltero(a)">Soltero(a)</ion-select-option>
+        <ion-select-option value="Casado(a)">Casado(a)</ion-select-option>
+        <ion-select-option value="Conviviente Civil">Conviviente Civil</ion-select-option>
+        <ion-select-option value="Divorciado(a)">Divorciado(a)</ion-select-option>
+      </ion-select>
+   
+     
+      
+      <!-- 10) COMENTARIOS -->
+      <ion-textarea style="height: 100px;" label="Comentarios" labelPlacement="floating" fill="solid" 
+      placeholder="Ingrese sus comentarios" [counter]="true" maxlength="500" [(ngModel)]="formData.comentarios"></ion-textarea>
+      
+      <div style="text-align: center; margin: 30px;">      
+        <!-- Boton -->
+        <ion-button [disabled]="   !formData.rut 
+                                || !formData.nombres
+                                || !formData.apellidos
+                                || !formData.direccion
+                                || !formData.ciudad
+                                || !formData.telefono
+                                || !formData.correo
+                                || !formData.fechaNacimiento
+                                || !formData.estadoCivil
+                                || !formData.comentarios"  
+                                  
+                                  (click)="mostrarData(formData)">Guardar
+                                
+        </ion-button>
+
+
+        <ion-button>Limpiar</ion-button>
+        <ion-button>Cerrar</ion-button>
+      </div>
+     
+ 
+
+    
+    </ion-card-content>
+  </ion-card>
+</ion-content>
