@@ -1,54 +1,45 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
-//Variables
-*{
+// Variables
+* {
   font-family: "Roboto", sans-serif;
-  --color1:#2B7F75;
-  --color2:#F2F5F3;	
-  --color3:#192939;	
-  --color4:#F3F5F7;	
+  --color1: #2B7F75;
+  --color2: #F2F5F3;
+  --color3: #192939;
+  --color4: #F3F5F7;
 }
-
 
 ion-toolbar {
   --background: var(--color1);
-  --padding-top:30px;
-  --padding-bottom:30px;
   color: var(--color2);
-  font-family: "Roboto", sans-serif; 
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
 }
+
 ion-title {
   font-weight: 900;
-
 }
 
-ion-card-title{
+ion-card-title {
   margin: 30px;
   text-align: center;
   font-weight: 600;
 }
+
 ion-content {
   --background: var(--color2);
 }
 
 ion-input {
-
   margin-bottom: 20px;
-
 }
 
 ion-button {
-  --background: var(--color1)
- 
+  --background: var(--color1);
 }
-
 
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -64,9 +55,7 @@ ion-button {
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -76,5 +65,5 @@ ion-button {
 
 #comentarios {
   height: 300px;
-  align-items: start;
+  align-items: start;
 }
